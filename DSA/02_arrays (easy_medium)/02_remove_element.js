@@ -33,10 +33,6 @@ Constraints:
 let nums = [0, 1, 2, 2, 3, 0, 4, 2],
   val = 2;
 
-function swap(nums, i, x) {
-  [nums[i], nums[x]] = [nums[x], nums[i]];
-}
-
 function removeElement(nums, val) {
   if (nums.length === 1 && nums[0] === val) return 0;
 
@@ -44,8 +40,7 @@ function removeElement(nums, val) {
 
   for (let i = 0; i < nums.length; i++) {
     if (nums[i] !== val) {
-      swap(nums, i, x);
-      x++;
+      nums[x++] = nums[i];
     }
   }
 
