@@ -52,21 +52,18 @@ const prices = [7, 6, 4, 3, 1];
 function maxProfit(prices) {
   if (prices.length === 1) return 0;
 
-  let maxProfit = 0;
-  let i = 1,
-    j = 0;
+  let maxP = 0;
+  let x = prices[0];
 
-  while (i < prices.length) {
-    if (prices[i] - prices[j] > maxProfit) {
-      maxProfit = prices[i] - prices[j];
-    } else if (prices[i] < prices[j]) {
-      j = i;
+  for (let i = 1; i < prices.length; i++) {
+    if (prices[i] - x > maxP) {
+      maxP = Math.max(maxP, prices[i] - x);
+    } else if (prices[i] < x) {
+      x = Math.min(x, prices[i]);
     }
-
-    i++;
   }
 
-  return maxProfit;
+  return maxP;
 }
 
 const result = maxProfit(prices);
