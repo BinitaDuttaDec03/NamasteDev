@@ -25,20 +25,21 @@ Space Complexity: O(1) — Constant space. */
 let arr = [10, 20, 20];
 
 function findSecondLargest(arr) {
-  if (!Array.isArray(arr)) return "Operation cannot be performed";
-  if (arr.length <= 1) return "Array should have at least two numbers";
+  if (arr.length < 2) return "Array should have at least two numbers";
 
-  let flargest = -Infinity,
-    slargest = -Infinity;
+  let max = -Infinity,
+    smax = -Infinity;
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > flargest) {
-      slargest = flargest;
-      flargest = arr[i];
-    } else if (arr[i] > slargest && arr[i] !== flargest) slargest = arr[i];
+    if (arr[i] > max) {
+      smax = max;
+      max = arr[i];
+    } else if (arr[i] > smax && max !== arr[i]) {
+      smax = arr[i];
+    }
   }
 
-  return slargest;
+  return smax === -Infinity ? "No second largest found" : smax;
 }
 
 const result = findSecondLargest(arr);
