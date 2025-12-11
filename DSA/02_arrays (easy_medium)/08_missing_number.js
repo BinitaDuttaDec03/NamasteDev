@@ -41,8 +41,7 @@ All the numbers of nums are unique.
 //   let missing = -1;
 //   for (let i = 0; i < nums.length; i++) {
 //     if (nums[i] !== i) {
-//       missing = i;
-//       break;
+//       return missing = i;
 //     }
 //   }
 
