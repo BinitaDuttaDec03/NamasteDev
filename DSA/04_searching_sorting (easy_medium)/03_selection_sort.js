@@ -3,10 +3,10 @@ const nums = [4, 5, 1, 3, 9];
 function sort(nums) {
   const n = nums.length;
 
-  for (let i = 0; i < n - 1; i++) {
+  for (let i = 0; i < n; i++) {
     let minIdx = i;
 
-    for (let j = i + 1; j < n - 1; j++) {
+    for (let j = i + 1; j < n; j++) {
       if (nums[j] < nums[minIdx]) {
         minIdx = j;
       }
