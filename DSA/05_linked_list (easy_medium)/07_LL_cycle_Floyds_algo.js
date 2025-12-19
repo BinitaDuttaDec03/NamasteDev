@@ -27,16 +27,34 @@ The number of the nodes in the list is in the range [0, 104].
 -105 <= Node.val <= 105
 pos is -1 or a valid index in the linked-list. */
 
+// Approach - 1
 function hasCycle(head) {
-  let curr = head;
-  const set = new Set();
+  let slow = head,
+    fast = head;
 
-  while (curr) {
-    if (set.has(curr)) return true;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
 
-    set.add(curr);
-    curr = curr.next;
+    if (slow === fast) return true;
   }
 
   return false;
+}
+
+// Approach - 2
+function hasCycle(head) {
+  if (!head || !head.next) return false;
+
+  let slow = head,
+    fast = head.next;
+
+  while (slow !== fast) {
+    if (!fast || !fast.next) return false;
+
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  return true;
 }
