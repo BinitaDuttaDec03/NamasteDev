@@ -27,24 +27,21 @@ function ListNode(val, next) {
 }
 
 function removeNthFromEnd(head, n) {
-  let size = 0;
-  let curr = head;
-
-  while (curr) {
-    size++;
-    curr = curr.next;
-  }
-
   let sentinel = new ListNode();
   sentinel.next = head;
 
-  let prev = sentinel;
-  let idxBeforeDeletingNode = size - n;
+  let slow = sentinel,
+    fast = sentinel;
 
-  for (let i = 0; i < idxBeforeDeletingNode; i++) {
-    prev = prev.next;
+  for (let i = 0; i < n; i++) {
+    fast = fast.next;
   }
 
-  prev.next = prev.next.next;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next;
+  }
+
+  slow.next = slow.next.next;
   return sentinel.next;
 }
