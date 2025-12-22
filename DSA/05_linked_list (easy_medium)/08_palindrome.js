@@ -1,4 +1,5 @@
-/* Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
+/* Problem Statement (Leetcode - 234)
+Given the head of a singly linked list, return true if it is a palindrome or false otherwise.
 
 Example 1:
 
