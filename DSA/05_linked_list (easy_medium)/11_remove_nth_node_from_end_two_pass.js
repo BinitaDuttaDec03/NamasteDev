@@ -21,6 +21,35 @@ The number of nodes in the list is sz.
 0 <= Node.val <= 100
 1 <= n <= sz */
 
+// Approach - 1
+// function ListNode(val, next) {
+//   this.val = val === undefined ? 0 : val;
+//   this.next = next === undefined ? null : next;
+// }
+
+// function removeNthFromEnd(head, n) {
+//   let size = 0;
+//   let curr = head;
+
+//   while (curr) {
+//     size++;
+//     curr = curr.next;
+//   }
+
+//   const idx = size - n;
+//   curr = head;
+
+//   for (let i = 0; i < idx - 1; i++) {
+//     curr = curr.next;
+//   }
+
+//   if (idx === 0) return head.next;
+
+//   curr.next = curr.next.next;
+//   return head;
+// }
+
+// Approach - 2
 function ListNode(val, next) {
   this.val = val === undefined ? 0 : val;
   this.next = next === undefined ? null : next;
