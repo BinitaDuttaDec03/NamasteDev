@@ -1,4 +1,4 @@
-/* Problem Statement:
+/* Problem Statement (Leetcode - 9)
 Write a function isPalindrome(x) that takes an integer x and returns true if it reads the same backward and forward; otherwise false.
 
 Requirements:
