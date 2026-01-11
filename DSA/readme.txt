@@ -1,2 +1,3 @@
 // TODO:
-1) Start from linked list
+1) 05_linked_list - 04
+2) 06_strings - 03
