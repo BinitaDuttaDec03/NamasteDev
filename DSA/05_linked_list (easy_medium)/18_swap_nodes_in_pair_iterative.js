@@ -40,10 +40,10 @@ function ListNode(val, next) {
 function swapPairs(head) {
   if (!head || !head.next) return head;
 
-  let prev = new ListNode();
-  let newHead = prev;
-  let curr = head;
-  let next = curr.next;
+  let dummy = new ListNode();
+  let prev = dummy,
+    curr = head,
+    next = curr.next;
 
   while (curr && next) {
     prev.next = next;
@@ -52,8 +52,8 @@ function swapPairs(head) {
 
     prev = curr;
     curr = prev.next;
-    next = curr.next;
+    next = curr?.next;
   }
 
-  return newHead.next;
+  return dummy.next;
 }
