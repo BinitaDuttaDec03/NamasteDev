@@ -38,9 +38,28 @@ function groupAnagrams(strs) {
   let map = {};
 
   for (let i = 0; i < strs.length; i++) {
+    let freqArr = Array(26).fill(0);
     let str = strs[i];
 
-    for (let j = 0; j < str.length; j++) {}
+    // filling the freq map for each string
+    for (let j = 0; j < str.length; j++) {
+      let idx = str[j].charCodeAt(0) - "a".charCodeAt();
+      freqArr[idx]++;
+    }
+
+    let key = "";
+
+    // creating the charFreqMap
+    for (let j = 0; j < 26; j++) {
+      // key += String.fromCharCode(j) + freqArr[j];
+      key += "#" + freqArr[j];
+    }
+
+    if (!map[key]) {
+      map[key] = [str];
+    } else {
+      map[key].push(str);
+    }
   }
 
   return Object.values(map);
