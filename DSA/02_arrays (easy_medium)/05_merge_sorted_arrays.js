@@ -40,13 +40,11 @@ Explanation: The arrays we are merging are [] and [1]. The result of the merge i
 //   n = 3;
 
 // function sortedArray(nums1, m, nums2, n) {
-//   let j = 0;
-
-//   for (let i = m; i < m + n; i++) {
-//     nums1[i] = nums2[j++];
+//   for (let i = 0; i < n; i++) {
+//     nums1[m + i] = nums2[i];
 //   }
 
-//   nums1.sort((a, b) => a - b);
+//   nums1 = nums1.sort((a, b) => a - b);
 // }
 
 // sortedArray(nums1, m, nums2, n);
