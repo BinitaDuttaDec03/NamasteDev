@@ -20,27 +20,8 @@ Constraints:
 1 <= nums.length <= 104
 -2 31 <= prices[i] <= 104-1 */
 
-// Approach - 1
-// let nums = [0, 1, 0, 3, 12];
+let nums = [0, 1, 0, 3, 12];
 // let nums = [0];
-
-// function moveZeroes(nums) {
-//   let x = 0;
-
-//   for (let i = 0; i < nums.length; i++) {
-//     if (nums[i] !== 0) {
-//       [nums[x], nums[i]] = [nums[i], nums[x]];
-//       x++;
-//     }
-//   }
-// }
-
-// moveZeroes(nums);
-// console.log(nums);
-
-// Approach - 2
-// let nums = [0, 1, 0, 3, 12];
-let nums = [0];
 
 function moveZeroes(nums) {
   let x = 0;

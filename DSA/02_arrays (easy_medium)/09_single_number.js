@@ -24,6 +24,34 @@ Constraints:
 -3 × 104 ≤ nums[i] ≤ 3 × 104
 Each element appears twice except one that appears only once. */
 
+// Approach - 1
+// const nums = [2, 2, 1];
+// const nums = [4, 1, 2, 1, 2];
+
+// function singleNumber(nums) {
+//   let map = new Map();
+
+//   for (let i = 0; i < nums.length; i++) {
+//     // if (map.has(nums[i])) {
+//     //     map.set(nums[i], map.get(nums[i])++);
+//     // } else {
+//     //     map.set(nums[i], 1);
+//     // }
+
+//     map.set(nums[i], (map.get(nums[i]) || 0) + 1);
+//   }
+
+//   for (let i = 0; i < nums.length; i++) {
+//     if (map.get(nums[i]) === 1) {
+//       return nums[i];
+//     }
+//   }
+// }
+
+// const result = singleNumber(nums);
+// console.log(result);
+
+// Approach - 2
 // const nums = [2, 2, 1];
 const nums = [4, 1, 2, 1, 2];
 

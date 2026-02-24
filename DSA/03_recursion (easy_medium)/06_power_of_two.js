@@ -17,32 +17,15 @@ Constraints:
 
 -231 <= n <= 231 - 1 */
 
-// Approach - 1
-// // const n = 8;
-// const n = 7;
-
-// function isPowerOfTwo(n) {
-//   if (n === 1 || n === 2) return true;
-//   if (n < 2 || n === 0) return false;
-
-//   return isPowerOfTwo(n / 2);
-// }
-
-// if (n < 0) n = Math.abs(n);
-// const result = isPowerOfTwo(n);
-// console.log(result);
-
-// Approach - 2
 const n = 8;
 // const n = 7;
 
 function isPowerOfTwo(n) {
   if (n === 1) return true;
-  if (n % 2 !== 0 || n < 1) return false;
+  if (n < 1) return false;
 
   return isPowerOfTwo(n / 2);
 }
 
-if (n < 0) n = Math.abs(n);
 const result = isPowerOfTwo(n);
 console.log(result);
