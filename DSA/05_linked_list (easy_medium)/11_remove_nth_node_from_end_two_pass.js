@@ -36,10 +36,10 @@ The number of nodes in the list is sz.
 //     curr = curr.next;
 //   }
 
-//   const idx = size - n;
+//   const idx = size - n - 1;
 //   curr = head;
 
-//   for (let i = 0; i < idx - 1; i++) {
+//   for (let i = 0; i < idx; i++) {
 //     curr = curr.next;
 //   }
 
