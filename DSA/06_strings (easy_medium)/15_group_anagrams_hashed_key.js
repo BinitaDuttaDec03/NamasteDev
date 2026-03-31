@@ -51,7 +51,7 @@ function groupAnagrams(strs) {
 
     // creating the charFreqMap
     for (let j = 0; j < 26; j++) {
-      // key += String.fromCharCode(j) + freqArr[j];
+      // key += String.fromCharCode(97 + j) + freqArr[j];
       key += "#" + freqArr[j];
     }
 
