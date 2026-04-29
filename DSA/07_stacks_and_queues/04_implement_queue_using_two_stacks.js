@@ -29,43 +29,35 @@
     myQueue.empty(); // return false
 */
 
-function MyStack() {
-    this.q1 = [];
-    this.q2 = [];
+function MyQueue() {
+    this.s1 = [];
+    this.s2 = [];
 }
 
 function push() {
-    this.q1.push(x);
+    this.s1.push(x);
 }
 
 function pop() {
-    const n = this.q1.length;
-
-    for (let i = 0; i < n - 1; i++) {
-        this.q2.push(this.q1.shift());
+    if (this.s2.length === 0) {
+        while (this.s1.length) {
+            this.s2.push(this.s1.pop());
+        }
     }
 
-    const pop = this.q1.shift();
-    this.q1 = this.q2;
-
-    return pop;
+    return this.s2.pop();
 }
 
 function top() {
-    const n = this.q1.length;
-
-    for (let i = 0; i < n - 1; i++) {
-        this.q2.push(this.q1.shift());
+    if (this.s2.length === 0) {
+        while (this.s1.length) {
+            this.s2.push(this.s1.pop());
+        }
     }
 
-    const top = this.q1.shift();
-
-    this.q2.push(top);
-    this.q1 = this.q2;
-
-    return top;
+    return this.s2[this.s2.length - 1];
 }
 
 function empty() {
-    return this.q1.length === 0
+    return this.s1.length === 0 && this.s2.length === 0;
 }
