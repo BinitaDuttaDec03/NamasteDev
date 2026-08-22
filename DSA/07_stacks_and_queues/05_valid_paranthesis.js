@@ -43,6 +43,8 @@
     s consists of parentheses only '()[]{}'.
 */
 
+
+// Approach - 1
 function isValid(s) {
     if (s.length % 2 !== 0) return false;
 
@@ -64,6 +66,30 @@ function isValid(s) {
                 continue;
             else
                 return false;
+        }
+    }
+
+    return st.length === 0;
+}
+
+
+// Approach - 2
+function isValid(s) {
+    let st = [];
+
+    let map = {
+        "(": ")",
+        "{": "}",
+        "[": "]",
+    }
+
+    for (let i = 0; i < s.length; i++) {
+        if (map[s[i]]) {
+            st.push(s[i]);
+        } else {
+            const top = st.pop();
+
+            if (!top || s[i] !== map[top]) return false;
         }
     }
 
