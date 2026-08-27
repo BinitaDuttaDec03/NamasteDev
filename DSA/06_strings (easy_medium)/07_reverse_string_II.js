@@ -25,11 +25,15 @@ let s = "abcd",
 
 function reverseStr(s, k) {
   s = s.split("");
-  let mid = Math.floor(k / 2);
 
-  for (let i = 0; i < s.length; i += 2 * k) {
-    for (let j = 0; j < mid; j++) {
-      [s[i + j], s[i + k - j - 1]] = [s[i + k - j - 1], s[i + j]];
+  for (let x = 0; x < s.length; x += (2 * k)) { // each iteration jumps with 2k steps
+    let n = k; // k elements to be reversed
+    let mid = Math.floor(n / 2);
+
+    for (let i = 0; i < mid; i++) {
+      let temp = s[x + i]; // normal reverse logic jumping with x steps
+      s[x + i] = s[x + n - 1 - i];
+      s[x + n - 1 - i] = temp;
     }
   }
 
