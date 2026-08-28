@@ -30,3 +30,32 @@
     All integers in nums1 and nums2 are unique.
     All the integers of nums1 also appear in nums2.
 */
+
+var nextGreaterElements = function (nums) {
+    let n = nums.length;
+    let st = [];
+    let ans = new Array(n).fill(-1);
+
+    for (let i = 2 * n; i >= 0; i--) {
+        let top = st[st.length - 1];
+
+        if (nums[i] < top) {
+            ans[i] = top;
+        } else {
+            while (st.length) {
+                top = st[st.length - 1];
+
+                if (nums[i] < top) {
+                    ans[i] = top;
+                    break;
+                } else {
+                    st.pop();
+                }
+            }
+        }
+
+        st.push(nums[i]);
+    }
+
+    return ans;
+};
