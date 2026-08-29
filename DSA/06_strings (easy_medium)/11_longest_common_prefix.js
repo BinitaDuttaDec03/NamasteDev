@@ -24,24 +24,47 @@ strs[i] consists of only lowercase English letters if it is non-empty. */
 // let strs = ["a"];
 let strs = ["flower", "flower", "flower", "flower"];
 
-function longestCommonPrefix(strs) {
-  if (strs.length === 1) return strs[0];
+// Approach - 1
+// function longestCommonPrefix(strs) {
+//   if (strs.length === 1) return strs[0];
 
+//   let x = 0;
+
+//   while (x < strs[0].length) {
+//     let ch = strs[0][x];
+
+//     for (let i = 1; i < strs.length; i++) {
+//       if (strs[i][x] !== ch || x === strs[i].length) {
+//         return strs[0].substring(0, x);
+//       }
+//     }
+
+//     x++;
+//   }
+
+//   return strs[0];
+// }
+
+
+// Approach - 2
+function longestCommonPrefix(strs) {
+  let base = strs[0];
   let x = 0;
 
-  while (x < strs[0].length) {
-    let ch = strs[0][x];
-
+  while (x < base.length) {
     for (let i = 1; i < strs.length; i++) {
-      if (strs[i][x] !== ch || x === strs[i].length) {
-        return strs[0].substring(0, x);
+      let str = strs[i];
+
+      if (str.length < x || str[x] !== base[x]) {
+        return base.substring(0, x);
       }
+
     }
 
     x++;
   }
 
-  return strs[0];
+  return base;
 }
 
 const result = longestCommonPrefix(strs);
