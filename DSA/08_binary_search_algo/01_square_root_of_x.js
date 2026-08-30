@@ -49,7 +49,8 @@ var mySqrt = function (x) {
 
     let l = 2, r = Math.floor(x / 2);
     while (l <= r) {
-        let mid = Math.floor((l + r) / 2);
+        // let mid = Math.floor((l + r) / 2);
+        let mid = l + Math.floor((r - l) / 2);
 
         if (x === mid * mid) return mid;
         else if (x < mid * mid) r = mid - 1;
