@@ -1,17 +1,21 @@
-function solution() {
-    if (n === 0) return 1
+let arr = [1, 2, 3, 4, 5, 6]
 
-    let count = 0
+function solution(a) {
+    let n = a.length;
 
-    if (n < 0) n = Math.abs(n)
+    for (let i = 0; i < n; i++) {
+        let isSwapped = false
 
-    while (n > 0) {
-        n = Math.floor(n / 10);
-        count++
+        for (let j = 0; j < n - 1 - i; j++) {
+            if (a[j] > a[j + 1]) {
+                [a[j], a[j + 1]] = [a[j + 1], a[j]]
+                isSwapped = true
+            }
+        }
+
+        if (!isSwapped) return
     }
-
-    return count
 }
 
-let n = 0
-console.log(solution())
+solution(arr)
+console.log(arr)
