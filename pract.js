@@ -1,19 +1,21 @@
-let arr = [1, 2, 3, 4, 5, 6]
+let arr = [9, 8, 6, 0, 0, 1, 2]
 
 function solution(a) {
     let n = a.length;
 
-    for (let i = 0; i < n; i++) {
-        let isSwapped = false
+    for (let i = 0; i < n - 1; i++) {
+        let curr = a[i + 1]
+        let prev = i
 
-        for (let j = 0; j < n - 1 - i; j++) {
-            if (a[j] > a[j + 1]) {
-                [a[j], a[j + 1]] = [a[j + 1], a[j]]
-                isSwapped = true
-            }
+        while (prev >= 0) {
+            if (curr >= a[prev])
+                break
+
+            a[prev + 1] = a[prev]
+            prev--
         }
 
-        if (!isSwapped) return
+        a[prev + 1] = curr
     }
 }
 
