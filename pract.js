@@ -1,19 +1,20 @@
-let arr = [1, 2, 3, 4, 5, 6]
+let arr = [6, 5, 7, 0, 0, 1, 2, 3]
 
 function solution(a) {
     let n = a.length;
 
-    for (let i = 0; i < n; i++) {
-        let isSwapped = false
+    for (let i = 0; i < n - 1; i++) {
+        let minIdx = i
 
-        for (let j = 0; j < n - 1 - i; j++) {
-            if (a[j] > a[j + 1]) {
-                [a[j], a[j + 1]] = [a[j + 1], a[j]]
-                isSwapped = true
+        for (let j = i + 1; j < n; j++) {
+            if (a[minIdx] > a[j]) {
+                minIdx = j
             }
         }
 
-        if (!isSwapped) return
+        if (i != minIdx) {
+            [a[i], a[minIdx]] = [a[minIdx], a[i]]
+        }
     }
 }
 
