@@ -34,22 +34,38 @@
     nums is sorted and rotated between 1 and n times.
 */
 
+// Approach - 1
+// var findMin = function (a) {
+//     let l = 0, r = a.length - 1;
+
+//     while (l <= r) {
+//         if (a[l] <= a[r]) return a[l];
+
+//         let mid = l + Math.floor((r - l) / 2);
+
+//         if (a[mid] < a[mid - 1]) return a[mid];
+
+//         if (a[l] > a[mid]) {
+//             // left side is unsorted
+//             r = mid - 1;
+//         } else {
+//             // right side is unsorted
+//             l = mid + 1;
+//         }
+//     }
+// };
+
+
+// Approach - 2
 var findMin = function (a) {
     let l = 0, r = a.length - 1;
 
-    while (l <= r) {
-        if (a[l] <= a[r]) return a[l];
+    while (l < r) {
+        const m = l + Math.floor((r - l) / 2);
 
-        let mid = l + Math.floor((r - l) / 2);
-
-        if (a[mid] < a[mid - 1]) return a[mid];
-
-        if (a[l] > a[mid]) {
-            // left side is unsorted
-            r = mid - 1;
-        } else {
-            // right side is unsorted
-            l = mid + 1;
-        }
+        if (a[l] <= a[m] && a[m] > a[r]) l = m + 1;
+        else r = m;
     }
+
+    return a[l];
 };
