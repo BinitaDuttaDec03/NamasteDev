@@ -40,6 +40,27 @@
 
 
 // Approach - 2
+// var findClosestElements = function (arr, k, x) {
+//     let i = 0;
+//     let res = [];
+
+//     while (i < arr.length - k) {
+//         if (x - arr[i] > arr[i + k] - x) {
+//             i++;
+//         } else {
+//             break;
+//         }
+//     }
+
+//     for (let j = 0; j < k; j++) {
+//         res.push(arr[j + i]);
+//     }
+
+//     return res;
+// };
+
+
+// Approach - 3
 var findClosestElements = function (arr, k, x) {
     let l = 0;
     let r = arr.length - k;
