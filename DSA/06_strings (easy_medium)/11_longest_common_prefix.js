@@ -47,25 +47,49 @@ let strs = ["flower", "flower", "flower", "flower"];
 
 
 // Approach - 2
-function longestCommonPrefix(strs) {
-  let base = strs[0];
-  let x = 0;
+// function longestCommonPrefix(strs) {
+//   let base = strs[0];
+//   let x = 0;
 
-  while (x < base.length) {
-    for (let i = 1; i < strs.length; i++) {
-      let str = strs[i];
+//   while (x < base.length) {
+//     for (let i = 1; i < strs.length; i++) {
+//       let str = strs[i];
 
-      if (str.length < x || str[x] !== base[x]) {
-        return base.substring(0, x);
-      }
+//       if (str.length < x || str[x] !== base[x]) {
+//         return base.substring(0, x);
+//       }
 
+//     }
+
+//     x++;
+//   }
+
+//   return base;
+// }
+
+// const result = longestCommonPrefix(strs);
+// console.log(result);
+
+
+// Approach - 3
+var longestCommonPrefix = function (strs) {
+  if (strs.length === 1) return strs[0];
+
+  let s = strs[0];
+  let i = 0;
+
+  for (let j = 1; j < strs.length; j++) {
+    if (i === s.length) break;
+
+    if (strs[j][i] !== s[i]) {
+      return s.substring(0, i);
     }
 
-    x++;
+    if (j === strs.length - 1) {
+      i++;
+      j = 0;
+    }
   }
 
-  return base;
-}
-
-const result = longestCommonPrefix(strs);
-console.log(result);
+  return s.substring(0, i);
+};
