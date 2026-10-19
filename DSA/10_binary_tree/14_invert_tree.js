@@ -1,4 +1,4 @@
-/* Problem statement (Leetcode - 101)
+/* Problem statement (Leetcode - 226)
     Given the root of a binary tree, invert the tree, and return its root.
 */
 
