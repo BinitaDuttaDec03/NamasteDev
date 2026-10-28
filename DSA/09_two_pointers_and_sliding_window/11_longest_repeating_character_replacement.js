@@ -23,6 +23,40 @@
     0 <= k <= s.length
 */
 
+// Approach - 1
+// var characterReplacement = function (s, k) {
+//     let i = 0, j = 0;
+//     let ws = 0;
+//     let map = {};
+
+//     while (j < s.length) {
+//         map[s[j]] = map[s[j]] ? ++map[s[j]] : 1;
+
+//         let max = 0; // max char count in map
+//         let tot = 0; // total char count in map
+
+//         const values = Object.values(map);
+
+//         for (const count of values) {
+//             tot += count;
+//             max = Math.max(max, count);
+//         }
+
+//         if (tot - max <= k) {
+//             ws = Math.max(ws, j - i + 1);
+//         } else {
+//             --map[s[i]];
+//             i++;
+//         }
+
+//         j++;
+//     }
+
+//     return ws;
+// };
+
+
+// Approach - 2
 function isValidWindow(map, k) {
     let tot = 0; // total elements in map
     let max = 0; // max count element in map

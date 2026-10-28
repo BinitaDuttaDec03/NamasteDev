@@ -33,6 +33,4 @@ It helps me:
 ```text
 NamasteDev/
 │
-├── DSA/
-│
-└── [Future NamasteDev Courses]
+└── DSA/
