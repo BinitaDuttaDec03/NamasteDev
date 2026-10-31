@@ -1,0 +1,8 @@
+1) Sliding Window:
+    If you come across substrings, think of sliding-window approach.
+
+
+2) Binary Tree:
+    a) Top-down approach - the logic is written at the top, and then the child nodes are called recursively.
+
+    b) Bottom-up approach - the child nodes are called recursively, and then the logic is written at the bottom. You need to handle the base case at the top and have to return some value in the end. 
